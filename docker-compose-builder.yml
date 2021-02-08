@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  harvester:
+      container_name: harvester
+      build: ./harvester
+      tty: true
+      command: /tmp/harvester_src/src/main/scripts/do-harvester.sh
+      volumes:
+        - ./liss-data:/var/harvester
+        - ./harvester/config.xml:/tmp/harvester_src/src/main/scripts/config.xml
